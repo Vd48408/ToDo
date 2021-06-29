@@ -21,7 +21,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#" style="color:"grey">OLIVER BRAND</a>
+		<a class="navbar-brand" href="http://localhost:8080/ToDoApp/home" style="color:"grey">OLIVER BRAND</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,7 +31,7 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
+				<li class="nav-item active"><a class="nav-link" href="http://localhost:8080/ToDoApp/home">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
 
@@ -40,11 +40,11 @@
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> Quick Work </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">FOOD</a>
+						<a class="dropdown-item" href="http://localhost:8080/ToDoApp/food">FOOD</a>
 						<div class="dropdown-divider my-0 "></div>
-						<a class="dropdown-item" href="#">FRESH UP</a>
+						<a class="dropdown-item" href="http://localhost:8080/ToDoApp/freshUp">FRESH UP</a>
 						<div class="dropdown-divider my-0"></div>
-						<a class="dropdown-item" href="#">MISCELLANEOUS</a>
+						<a class="dropdown-item" href="http://localhost:8080/ToDoApp/miscellaneous">MISCELLANEOUS</a>
 					</div></li>
 
 			</ul>
@@ -67,7 +67,7 @@
 					<button type="button"
 						class="list-group-item list-group-item-action active">
 						MENU</button>
-					<a href='<c:url value='/home'></c:url>'
+					<a href='<c:url value='/food'></c:url>'
 						class="list-group-item list-group-item-action">FOOD</a>
 					<a href='<c:url value='/freshUp'></c:url>'
 						class="list-group-item list-group-item-action">FRESH UP</a>
@@ -79,7 +79,7 @@
 			</div>
 			<div class="col-md-10 ">
 				<c:if test="${page=='food'}">
-				<h2 class="text-center"> ENTER YOUR NAME </h2> 
+				<h2 class="text-center"> ENTER YOUR NAME & FOOD </h2> 
 				</c:if>
 				<c:if test="${page=='freshUp'}">
 				<h2 class="text-center"> ENTER YOUR NAME </h2>

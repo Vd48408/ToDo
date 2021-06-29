@@ -11,10 +11,19 @@ public class Homectrl {
 	@RequestMapping("/home")
 	public String Home(Model m) {
 		
+		m.addAttribute("page", "home");
+		return "home"; 
+				
+	}
+	
+	@RequestMapping("/food")
+	public String food(Model m) {
+		
 		m.addAttribute("page", "food");
 		return "home"; 
 				
 	}
+	
 	@RequestMapping("/freshUp")
 	public String freshUp(Model m) {
 		
