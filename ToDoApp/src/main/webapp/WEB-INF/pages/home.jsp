@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-	<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +22,8 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="http://localhost:8080/ToDoApp/home" style="color:"grey">OLIVER BRAND</a>
+		<a class="navbar-brand" href="http://localhost:8080/ToDoApp/home"
+			style="color:"grey">OLIVER BRAND</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -32,8 +33,9 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="http://localhost:8080/ToDoApp/home">Home
-						<span class="sr-only">(current)</span>
+				<li class="nav-item active"><a class="nav-link"
+					href="http://localhost:8080/ToDoApp/home">Home <span
+						class="sr-only">(current)</span>
 				</a></li>
 
 				<li class="nav-item dropdown"><a
@@ -43,9 +45,11 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="http://localhost:8080/ToDoApp/food">FOOD</a>
 						<div class="dropdown-divider my-0 "></div>
-						<a class="dropdown-item" href="http://localhost:8080/ToDoApp/freshUp">FRESH UP</a>
+						<a class="dropdown-item"
+							href="http://localhost:8080/ToDoApp/freshUp">FRESH UP</a>
 						<div class="dropdown-divider my-0"></div>
-						<a class="dropdown-item" href="http://localhost:8080/ToDoApp/miscellaneous">MISCELLANEOUS</a>
+						<a class="dropdown-item"
+							href="http://localhost:8080/ToDoApp/miscellaneous">MISCELLANEOUS</a>
 					</div></li>
 
 			</ul>
@@ -62,31 +66,83 @@
 
 		<div class="row mt-5">
 			<div class="col-md-2">
-				
-				
+
+
 				<div class="list-group">
 					<button type="button"
 						class="list-group-item list-group-item-action active">
 						MENU</button>
 					<a href='<c:url value='/food'></c:url>'
-						class="list-group-item list-group-item-action">FOOD</a>
-					<a href='<c:url value='/freshUp'></c:url>'
-						class="list-group-item list-group-item-action">FRESH UP</a>
-					<a href='<c:url value='/miscellaneous'></c:url>'
-						class="list-group-item list-group-item-action">MISCELLANEOUS
-					</a>
+						class="list-group-item list-group-item-action">FOOD</a> <a
+						href='<c:url value='/freshUp'></c:url>'
+						class="list-group-item list-group-item-action">FRESH UP</a> <a
+						href='<c:url value='/miscellaneous'></c:url>'
+						class="list-group-item list-group-item-action">MISCELLANEOUS </a>
 
 				</div>
 			</div>
 			<div class="col-md-10 ">
+
 				<c:if test="${page=='food'}">
-				<h2 class="text-center"> ENTER YOUR NAME & FOOD </h2> 
+					<h2 class="text-center">ENTER YOUR NAME & FOOD</h2>
+					<form:form action="/save" method="post" modelAttribute="Food">
+
+						<div class="form-group">
+							<form:input path="pname" cssClass="form-control"
+								placeholder="Enter Your Name" />
+						</div>
+						<div class="form-group">
+							<form:textarea path="wfood" cssClass="form-control"
+								placeholder="Food Name" />
+						</div>
+							<div class="container text-center">
+							<button class="btn btn-outline-sucess">Submit</button>
+
+
+						</div>
+					</form:form>
+
+
 				</c:if>
 				<c:if test="${page=='freshUp'}">
-				<h2 class="text-center"> ENTER YOUR NAME </h2>
+					<h2 class="text-center">ENTER YOUR NAME</h2>
+					<form:form action="/save" method="post" modelAttribute="Fresh">
+
+						<div class="form-group">
+							<form:input path="yname" cssClass="form-control"
+								placeholder="Enter Your Name" />
+						</div>
+						<div class="container text-center">
+							<button class="btn btn-outline-sucess">Submit</button>
+
+
+						</div>
+
+
+					</form:form>
+
 				</c:if>
 				<c:if test="${page=='miscellaneous'}">
-				<h2 class="text-center"> ENTER YOUR NAME & WORK</h2>
+					<h2 class="text-center">ENTER YOUR NAME AND WORK</h2>
+					<form:form action="/save" method="post" modelAttribute="MISC">
+
+						<div class="form-group">
+							<form:input path="name" cssClass="form-control"
+								placeholder="Enter Your Name" />
+						</div>
+						<div class="form-group">
+							<form:textarea path="work" cssClass="form-control"
+								placeholder="Enter Your Work" />
+						</div>
+						<div class="container text-center">
+							<button class="btn btn-outline-sucess">Submit</button>
+
+
+						</div>
+
+
+					</form:form>
+
 				</c:if>
 			</div>
 
