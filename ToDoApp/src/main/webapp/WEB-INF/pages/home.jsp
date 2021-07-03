@@ -17,7 +17,7 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 
-<title>OLIVER'S-"${ page}"</title>
+<title>OLIVER'S-${ page}</title>
 </head>
 <body>
 
@@ -85,7 +85,7 @@
 
 				<c:if test="${page=='food'}">
 					<h2 class="text-center">ENTER YOUR NAME & FOOD</h2>
-					<form:form action="/save" method="post" modelAttribute="Food">
+					<form:form action="save" method="post" modelAttribute="Food">
 
 						<div class="form-group">
 							<form:input path="pname" cssClass="form-control"
@@ -96,7 +96,7 @@
 								placeholder="Food Name" />
 						</div>
 							<div class="container text-center">
-							<button class="btn btn-outline-sucess">Submit</button>
+							<button class="btn btn-outline-success">Submit</button>
 
 
 						</div>
@@ -106,17 +106,17 @@
 				</c:if>
 				<c:if test="${page=='freshUp'}">
 					<h2 class="text-center">ENTER YOUR NAME</h2>
-					<form:form action="/save" method="post" modelAttribute="Fresh">
+					<form:form action="submitt" method="post" modelAttribute="Fresh">
 
 						<div class="form-group">
 							<form:input path="yname" cssClass="form-control"
 								placeholder="Enter Your Name" />
 						</div>
 						<div class="container text-center">
-							<button class="btn btn-outline-sucess">Submit</button>
+							<button class="btn btn-outline-success">Submit</button>
 
 
-						</div>
+					</div>
 
 
 					</form:form>
@@ -124,7 +124,7 @@
 				</c:if>
 				<c:if test="${page=='miscellaneous'}">
 					<h2 class="text-center">ENTER YOUR NAME AND WORK</h2>
-					<form:form action="/save" method="post" modelAttribute="MISC">
+					<form:form action="submit" method="post" modelAttribute="MISC">
 
 						<div class="form-group">
 							<form:input path="name" cssClass="form-control"
@@ -135,7 +135,7 @@
 								placeholder="Enter Your Work" />
 						</div>
 						<div class="container text-center">
-							<button class="btn btn-outline-sucess">Submit</button>
+							<button class="btn btn-outline-success">Submit</button>
 
 
 						</div>
